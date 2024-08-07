@@ -1,0 +1,52 @@
+body{
+    background:linear-gradient(45deg,white,black,purple,grey);
+    height:auto;
+    width:100%;
+}
+section{
+    background:white;
+    width:70%;
+    margin:10rem auto;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius:20px;
+    box-shadow: 1px 2px 3px 4px black;
+}
+.First{
+    width:auto;
+    margin:5rem auto;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    flex:1;
+    flex-direction:column;
+    border:1px solid black;
+    box-shadow: 1px 2px 3px 4px black;
+    border-radius:20px;
+    padding:5rem;
+   
+
+}
+.Download{
+    margin-top:0;
+}
+.input{
+    width:80%;
+    margin:1rem;
+    align-items: center;
+}
+.button{
+    margin:1rem;
+    align-items: center;
+    background:green;
+    height:2rem;
+    border-radius:10px;
+}
+@media screen and (max-width: 370px) {
+    .First {
+     display:none;
+    }
+  }
+  
