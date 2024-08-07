@@ -31,6 +31,17 @@ section{
 }
 .Download{
     margin-top:0;
+    width:50%;
+    margin:5rem auto;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    flex:1;
+    flex-direction:column;
+    border:1px solid black;
+    box-shadow: 1px 2px 3px 4px black;
+    border-radius:20px;
+    padding:5rem;
 }
 .input{
     width:80%;
@@ -44,9 +55,15 @@ section{
     height:2rem;
     border-radius:10px;
 }
-@media screen and (max-width: 370px) {
-    .First {
+img{
+    width:100%
+}
+@media screen and (max-width: 400px) {
+    .Download {
      display:none;
     }
+    .First {
+        display:none;
+       }
   }
   

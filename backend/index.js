@@ -12,15 +12,37 @@ app.use(cors())
 
 const Port =5080
 app.post('/Upload',upload.single("imageInput"),(req,res)=>{
-    const image =sharp(req.files.buffer);
+    const image =sharp(req.file.buffer);
     image
-    toBuffer()
+    .jpeg({ mozjpeg: true }) 
+    .toBuffer()
     .then(function (data) {
       console.log(data);
-      let base64Encoded = data.toString("base64");
-      const url = `data:image/jpeg;base64,${base64Encoded}`;
+      //let base64Encoded = data.toString("base64");
+      //const url = `data:image/jpeg;base64,${base64Encoded}`;
+      let pixel =[]
+ 
+      for(let i = 0; i < data.length; i += 4){
+pixel.push(data[i])
+      }
 
-      res.status(200).send({ data: url });
+      const maxSum = KadanesAlgorithm(pixel)
+
+      res.status(200).send({ data: maxSum });
     })
+    //KadanesAlgorithm
+    function KadanesAlgorithm () {
+     let maxcurrent =[0]
+     let MaxGlobal =[0]
+
+     for(let i = 1; i < Array.length; i++){
+      const maxcurrent = Math.max(arr[i], maxcurrent + arr[i])
+
+        if(maxcurrent > MaxGlobal){
+          MaxGlobal =maxcurrent
+        }
+     return MaxGlobal
+     }
+    }
 })
 app.listen(Port, ()=>{console.log(`server running from http://localhost:${Port}`)})
